@@ -11,18 +11,18 @@
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
 
-    cached.php is distributed in the hope that it will be useful,
+    kml2svg is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with cached.php.  If not, see <http://www.gnu.org/licenses/>
+    along with kml2svg.  If not, see <http://www.gnu.org/licenses/>
 */
 
 $outputSvg = TRUE; // FALSE = gd
-$scale = 1.5;
-$skipPostcodes = ['ZE', 'KW', 'GY', 'JE']; // outer islands of the UK hidden
+$scale = 1;
+$skipPostcodes = ['BT', 'ZE', 'KW', 'GY', 'JE']; // outer islands of the UK hidden
 
 ini_set('memory_limit', '512M');
 ini_set('error_reporting', E_ALL);
@@ -127,7 +127,7 @@ $ydiff=intval($width*$scale*.025);
 
 if($outputSvg)
 {
-	echo '<html><head></head><body>';
+	echo "<!DOCTYPE html><html><head><script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script><script>jQuery(document).ready(function(){jQuery('.poly').click(function(event){alert(event.target.attributes['data-name'].nodeValue);})});</script></head><body>";
 	echo '<svg xmlns="http://www.w3.org/2000/svg" version="1.1"> <g id="map" transform="rotate(180, '.($uheight/2).','.($uwidth/2).')">';
 }
 else
