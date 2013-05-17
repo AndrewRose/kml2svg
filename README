@@ -1,0 +1,3 @@
+kml2svg is a simple script for converting the KML found at: http://www.freemaptools.com/download-uk-postcode-outcode-boundaries.htm into SVG format.  This script will likely need the xpaths tweaking for other KML files as I've not followed any kind of spec, just my nose.
+
+Calculations for converting lon lat cords to x y from: http://blog.procontentanddesign.com/articles/single/171_Converting_latitude-longitude_into_x-y_cordinates_for_images.htm
